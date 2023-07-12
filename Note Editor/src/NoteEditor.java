@@ -48,11 +48,11 @@ public class NoteEditor implements ActionListener {
         selectAll.addActionListener(this);
         close = new JMenuItem("Close");
         close.addActionListener(this);
-    
-        edit.add(selectAll);
+
         edit.add(copy);
         edit.add(cut);
         edit.add(paste);
+        edit.add(selectAll);
         edit.add(close);
 
         theme = new JMenu("Theme");
