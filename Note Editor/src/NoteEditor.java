@@ -1,3 +1,5 @@
+import java.io.*;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
@@ -7,13 +9,6 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 
 public class NoteEditor implements ActionListener {
     JFrame frame;
@@ -22,12 +17,11 @@ public class NoteEditor implements ActionListener {
     JMenu file, edit, theme;
     JMenuItem newFile, openFile, saveFile;
     JMenuItem copy, cut, paste, selectAll, close;
-    JMenuItem light, dark, pink, yellow, green, orange;
+    JMenuItem light, dark, pink, green, orange;
     JTextArea textArea;
 
     NoteEditor() {
         frame = new JFrame("Note Editor");
-        
 
         menu = new JMenuBar();
 
@@ -68,8 +62,6 @@ public class NoteEditor implements ActionListener {
         dark.addActionListener(this);
         pink = new JMenuItem("Pink Theme");
         pink.addActionListener(this);
-        yellow = new JMenuItem("Yellow Theme");
-        yellow.addActionListener(this);
         green = new JMenuItem("Green Theme");
         green.addActionListener(this);
         orange = new JMenuItem("Orange Theme");
@@ -78,7 +70,6 @@ public class NoteEditor implements ActionListener {
         theme.add(light);
         theme.add(dark);
         theme.add(pink);
-        theme.add(yellow);
         theme.add(green);
         theme.add(orange);
 
@@ -89,7 +80,7 @@ public class NoteEditor implements ActionListener {
         frame.setJMenuBar(menu);
 
         textArea = new JTextArea();
-        textArea.setFont(textArea.getFont().deriveFont(16f));
+        textArea.setFont(textArea.getFont().deriveFont(14f));
 
         JPanel panel = new JPanel();
         panel.setBorder(new EmptyBorder(0, 5, 0, 0));
@@ -179,26 +170,27 @@ public class NoteEditor implements ActionListener {
         else if (aEvent.getSource() == light) {
             textArea.setBackground(Color.WHITE);
             textArea.setForeground(Color.BLACK);
+            textArea.setCaretColor(Color.BLACK);
         }
         else if (aEvent.getSource() == dark) {
             textArea.setBackground(Color.BLACK);
             textArea.setForeground(Color.WHITE);
+            textArea.setCaretColor(Color.WHITE);
         }
         else if (aEvent.getSource() == pink) {
             textArea.setBackground(Color.PINK);
             textArea.setForeground(Color.BLACK);
-        }
-        else if (aEvent.getSource() == yellow) {
-            textArea.setBackground(Color.YELLOW);
-            textArea.setForeground(Color.BLACK);
+            textArea.setCaretColor(Color.BLACK);
         }
         else if (aEvent.getSource() == green) {
-            textArea.setBackground(Color.GREEN);
+            textArea.setBackground(new Color(144, 238, 144));;
             textArea.setForeground(Color.BLACK);
+            textArea.setCaretColor(Color.BLACK);
         }
         else if (aEvent.getSource() == orange) {
-            textArea.setBackground(Color.ORANGE);
+            textArea.setBackground(new Color(255, 213, 128));
             textArea.setForeground(Color.BLACK);
+            textArea.setCaretColor(Color.BLACK);
         }
     }
 
