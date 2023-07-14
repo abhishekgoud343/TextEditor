@@ -1,4 +1,4 @@
-# NoteEditor
+# Note Editor
 **Note Editor** is a text editor application for Desktop.
 
 It has basic features like:
