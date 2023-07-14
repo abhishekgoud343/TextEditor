@@ -1,6 +1,5 @@
-# TextEditor
-
-This is a basic editor named "Note Editor".
+# NoteEditor
+**Note Editor** is a text editor application for Desktop.
 
 It has basic features like:
     1. File options:
