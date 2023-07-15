@@ -2,10 +2,12 @@
 **Note Editor** is a text editor application for Desktop.
 
 It has basic features like:
+    
     1. File options:
         New Note
         Open FIle
         Save File
+
     2. Edit options:
         Copy
         Cut
