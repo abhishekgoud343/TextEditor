@@ -98,7 +98,7 @@ public class NoteEditor implements ActionListener {
         frame.setBounds(0, 0, size.width, size.height);
         frame.setVisible(true);
         frame.setLayout(null);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     @Override
