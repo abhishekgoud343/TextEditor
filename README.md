@@ -14,3 +14,5 @@ It has basic features like:
         Close
 
 And additinally a few themes are also provided.
+
+The application is built using the Java SWing framework.
