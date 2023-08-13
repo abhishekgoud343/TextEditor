@@ -47,7 +47,7 @@ public class NoteEditor implements ActionListener {
         selectAll.addActionListener(this);
         close = new JMenuItem("Close");
         close.addActionListener(this);
-
+    
         edit.add(copy);
         edit.add(cut);
         edit.add(paste);
@@ -116,19 +116,16 @@ public class NoteEditor implements ActionListener {
                 try {
                     FileReader fileReader = new FileReader(filePath);
                     BufferedReader br = new BufferedReader(fileReader);
-                    String intermediate = "", output = "";
+                    String intermediate;
+                    StringBuilder output = new StringBuilder();
 
                     while ((intermediate = br.readLine()) != null)
-                        output += intermediate + "\n";
+                        output.append(intermediate).append("\n");
                     
-                    textArea.setText(output);
+                    textArea.setText(output.toString());
                     br.close();
-                }
-                catch(FileNotFoundException fileNotFoundException) {
+                } catch(IOException fileNotFoundException) {
                     fileNotFoundException.printStackTrace();
-                }
-                catch(IOException ioException) {
-                    ioException.printStackTrace();
                 }
             }
         }
@@ -164,7 +161,8 @@ public class NoteEditor implements ActionListener {
             textArea.selectAll();
         }
         else if (aEvent.getSource() == close) {
-            System.exit(0);
+            frame.setVisible(false);
+            frame.dispose();
         }
         else if (aEvent.getSource() == light) {
             textArea.setBackground(Color.WHITE);
@@ -182,7 +180,7 @@ public class NoteEditor implements ActionListener {
             textArea.setCaretColor(Color.BLACK);
         }
         else if (aEvent.getSource() == green) {
-            textArea.setBackground(new Color(144, 238, 144));;
+            textArea.setBackground(new Color(144, 238, 144));
             textArea.setForeground(Color.BLACK);
             textArea.setCaretColor(Color.BLACK);
         }
@@ -193,7 +191,7 @@ public class NoteEditor implements ActionListener {
         }
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         NoteEditor app = new NoteEditor();
     }
 }
