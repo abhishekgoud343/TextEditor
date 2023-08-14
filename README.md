@@ -17,4 +17,4 @@ It has basic features like:
 
 And additinally a few themes are also provided.
 
-The application is built using the Java SWing framework.
+The application is built using the Java Swing framework.
