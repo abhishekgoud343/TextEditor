@@ -1,14 +1,12 @@
-import java.io.*;
-
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.GraphicsEnvironment;
+import java.awt.Rectangle;
+import java.io.*;
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 
 public class NoteEditor implements ActionListener {
     JFrame frame;
@@ -94,9 +92,9 @@ public class NoteEditor implements ActionListener {
 
         frame.add(panel);
 
-        size = new Dimension(Toolkit.getDefaultToolkit().getScreenSize());
+        size = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
 
-        frame.setBounds(0, 0, size.width, size.height);
+        frame.setSize(size.width + 12, size.height + 12);
         frame.setVisible(true);
         frame.setLayout(null);
     }
