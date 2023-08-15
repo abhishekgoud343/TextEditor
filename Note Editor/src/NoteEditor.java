@@ -10,7 +10,7 @@ import javax.swing.border.EmptyBorder;
 
 public class NoteEditor implements ActionListener {
     JFrame frame;
-    Dimension size;
+    Rectangle size;
     JMenuBar menu;
     JMenu file, edit, theme;
     JMenuItem newFile, openFile, saveFile;
@@ -93,10 +93,10 @@ public class NoteEditor implements ActionListener {
         frame.add(panel);
 
         size = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
-
         frame.setSize(size.width + 12, size.height + 12);
         frame.setVisible(true);
         frame.setLayout(null);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
     @Override
