@@ -1,5 +1,6 @@
 # Note Editor
-**Note Editor** is a text editor application for Desktop.
+
+**Note Editor** is a text editor application for Desktop, built using the Java Swing framework.  
 
 It has basic features like:
     
@@ -16,8 +17,6 @@ It has basic features like:
         Close
 
 And additinally a few themes are also provided.
-
-The application is built using the Java Swing framework.
 
 ## Instructions to run the Project locally
 1. Open the project folder (```Note Editor```) in any IDE or code editor such as IntelliJ IDEA, VS Code, Eclipse etc.  
